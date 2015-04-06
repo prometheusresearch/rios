@@ -168,7 +168,7 @@ language        Assessment          String      en                  A Language T
                                                                     the language/locale used in the values of the Assessment.
 application     Assessment          String      SurveyMaster/1.0    A string that indicates what application produced the
                                                                     Assessment Document. This must should be formatted similarly
-                                                                    to HTTP User-Agent strings as specified in `RFC2616`_.
+                                                                    to HTTP Product Token strings as specified in `RFC2616`_.
 dateCompleted   Assessment          String      2012-11-20T10:46:08 An `ISO 8601`_ extended format date and time combination that
                                                                     indicates when data collection for the Assessment completed.
 timeTaken       Assessment, Value   Number      23500               An integer that indicates the number of milliseconds that
@@ -178,5 +178,5 @@ timeTaken       Assessment, Value   Number      23500               An integer t
 =============== =================== =========== =================== =============================================================
 
 .. _`RFC5646`: http://tools.ietf.org/html/rfc5646
-.. _`RFC2616`: http://tools.ietf.org/html/rfc2616#section-14.43
+.. _`RFC2616`: http://tools.ietf.org/html/rfc2616#section-3.8
 
