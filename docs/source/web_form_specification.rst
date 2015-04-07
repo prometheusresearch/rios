@@ -48,12 +48,6 @@ The Root Object of a Web Form Configuration consists of several properties:
                   described within.
     :Example: My Example Title
 
-``tags``
-    :Type: Array of `Identifier`_
-    :Description: This property defines all tags that may be used throughout
-                  the Form either in the ``tags`` property of Elements or the
-                  ``targets`` property of Events.
-
 ``pages``
     :Type: Array of `Page Object`_
     :Contraints: Required; Must contain at least one `Page Object`_
@@ -68,7 +62,7 @@ The Root Object of a Web Form Configuration consists of several properties:
                   Fields from the Instrument that are not included in any
                   Questions.
 
-parameters
+``parameters``
     :Type: `Parameter Collection Object`_
     :Description: This property specifies the identifiers of variables that
                   will be provided upon instantiation by a source external to
