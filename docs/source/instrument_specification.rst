@@ -96,7 +96,9 @@ of several properties:
     :Type: String
     :Constraints: Required; Must be an `Identifier String`_
     :Description: This property uniquely identifies the data point so that it
-                  can be referred to in subsequent documents.
+                  can be referred to in subsequent documents. It must be
+                  unique within the scope of the collection it is contained
+                  within.
 
 ``description``
     :Type: String
@@ -285,7 +287,9 @@ data points that are to be collected for reach row.
     :Type: String
     :Constraints: Required; Must be an `Identifier String`_
     :Description: This property uniquely identifies the data point so that it
-                  can be referred to in subsequent documents.
+                  can be referred to in subsequent documents. It must be
+                  unique within the scope of the parent Field it is
+                  encapsulated in.
 
 ``description``
     :Type: String
@@ -331,7 +335,10 @@ field.
     :Type: String
     :Constraints: Required; Must be an `Identifier String`_
     :Description: This property uniquely identifies the data point so that it
-                  can be referred to in subsequent documents.
+                  can be referred to in subsequent documents. It must be
+                  unique within the scope of the parent Field it is
+                  encapsulated in.
+
 
 ``description``
     :Type: String
