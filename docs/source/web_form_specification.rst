@@ -480,8 +480,8 @@ the properties are the localized versions of the same text.
 Example::
 
     {
-        "en": "What is the subjectâ€™s age?",
-        "fr": "Quel est lâ€™Ã¢ge du sujet?"
+        "en": "What is the subject's age?",
+        "fr": "Quel est l'âge de l'objet?"
     }
 
 Every Localized String Object within a given Web Form Configuration must
