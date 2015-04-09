@@ -447,11 +447,24 @@ following properties:
 Parameter Collection Object
 ---------------------------
 A Parameter Collection object consists of one-to-many properties where the
-proeprty name serves as a reference to a variable that will be supplied to the
-Form rendering engine from an external source. These variableso can be used in
+property name serves as a reference to a variable that will be supplied to the
+Form rendering engine from an external source. These variables can be used in
 any event logic, and can be substituted into the text of any element that
-renders text. The ID of the property is in the format of an `Identifier`_ and
-the value is a `Parameter Object`_.
+renders text. The values in this object are in the form of a
+`Parameter Object`_.
+
+This identifier is a string that adheres to the following restrictions:
+
+* Consists of two or more of the following characters
+
+  * Lowercase latin alphabetic characters ("a" through "z"; Unicode 0061
+    through 007A)
+  * Uppercase latin alphabetic characters ("A" through "Z"; Unicode 0041
+    through 005A)
+  * Underscore characters ("_"; Unicode 005F)
+
+* The first character is a lowercase or uppercase latin alphabetic character.
+* The last character is not an underscore.
 
 
 Parameter Object

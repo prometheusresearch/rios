@@ -191,7 +191,7 @@ This identifier is a string that adheres to the following restrictions:
     through 005A)
   * Underscore characters ("_"; Unicode 005F)
 
-* The last character is not an underscore.
+* The first and last characters are not an underscore.
 * Cannot be the identifier of one of the `Base Types`_
 
 
