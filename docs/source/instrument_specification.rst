@@ -94,7 +94,7 @@ of several properties:
 
 ``id``
     :Type: String
-    :Constraints: Required; Must be an `Identifier String`_
+    :Constraints: Required; Must be an `Identifier`_
     :Description: This property uniquely identifies the data point so that it
                   can be referred to in subsequent documents. It must be
                   unique within the scope of the collection it is contained
@@ -178,21 +178,8 @@ A Type Collection Object gives the Instrument author a means to define a set of
 common and/or frequently-used data types/restrictions that can then be referred
 to throughout the rest of the Instrument Definition. This object consists of
 one or more properties where the property name serves as a unique identifier
-for the Type, and the value of the property is the definition of the Type, in
-the format of a `Type Object`_.
-
-This identifier is a string that adheres to the following restrictions:
-
-* Consists of two or more of the following characters
-
-  * Lowercase latin alphabetic characters ("a" through "z"; Unicode 0061
-    through 007A)
-  * Uppercase latin alphabetic characters ("A" through "Z"; Unicode 0041
-    through 005A)
-  * Underscore characters ("_"; Unicode 005F)
-
-* The first and last characters are not an underscore.
-* Cannot be the identifier of one of the `Base Types`_
+for the Type (in the format of an `Identifier`_), and the value of the property
+is the definition of the Type, in the format of a `Type Object`_.
 
 
 Type Object
@@ -285,7 +272,7 @@ data points that are to be collected for reach row.
 
 ``id``
     :Type: String
-    :Constraints: Required; Must be an `Identifier String`_
+    :Constraints: Required; Must be an `Identifier`_
     :Description: This property uniquely identifies the data point so that it
                   can be referred to in subsequent documents. It must be
                   unique within the scope of the parent Field it is
@@ -333,7 +320,7 @@ field.
 
 ``id``
     :Type: String
-    :Constraints: Required; Must be an `Identifier String`_
+    :Constraints: Required; Must be an `Identifier`_
     :Description: This property uniquely identifies the data point so that it
                   can be referred to in subsequent documents. It must be
                   unique within the scope of the parent Field it is
@@ -441,7 +428,7 @@ The unique identifiers for these enumerations are used by Assessment Documents
 (and/or other supplementary documents) to indicate which enumeration(s) were
 selected by the respondent.
 
-Example Unique Identifiers:
+Example Identifiers:
 
 * blue_green
 * abc123
@@ -464,12 +451,9 @@ or ``enumerationSet``. These object consist of the following properties:
                   optional.
 
 
-Identifier String
------------------
-An Identifier String is a token that is used to uniquely identify a specific
-structure. The identifier must be unique throughout the *entire* context of the
-Instrument Definition. This identifier is a string that adheres to the
-following restrictions:
+Identifier
+----------
+Identifiers are strings that adhere to the following restrictions:
 
 * Consists of 2 or more of the following characters:
 
@@ -477,20 +461,14 @@ following restrictions:
     through 007A)
   * Latin numeric digits ("0" through "9"; Unicode 0030 through 0039)
   * Underscore characters ("_"; Unicode 005F)
-  * Hyphen characters ("-"; Unicode 002D)
 
-* The first character is a lowercase latin alphabetic character.
-* The last character is a lowercase latin alphabetic character or latin numeric
-  digit.
-* Does not contain consecutive underscore and/or hyphen characters.
+* The first character is an alphabetic character.
+* The last character is not an underscore.
+* Does not contain consecutive underscore characters.
 
-The unique identifiers for these Fields are used by Assessment Documents
-(and/or other supplementary documents) to associate responses or other
-configuration to the Fields defined by the Instrument.
+Example Identifiers:
 
-Example Identifier Strings:
-
-* q_eye_color
-* abc123
-* ref-1-2-alpha
+* page1
+* grp_a
+* ref_1_2_alpha
 

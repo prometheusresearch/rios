@@ -450,21 +450,8 @@ A Parameter Collection object consists of one-to-many properties where the
 property name serves as a reference to a variable that will be supplied to the
 Form rendering engine from an external source. These variables can be used in
 any event logic, and can be substituted into the text of any element that
-renders text. The values in this object are in the form of a
-`Parameter Object`_.
-
-This identifier is a string that adheres to the following restrictions:
-
-* Consists of two or more of the following characters
-
-  * Lowercase latin alphabetic characters ("a" through "z"; Unicode 0061
-    through 007A)
-  * Uppercase latin alphabetic characters ("A" through "Z"; Unicode 0041
-    through 005A)
-  * Underscore characters ("_"; Unicode 005F)
-
-* The first character is a lowercase or uppercase latin alphabetic character.
-* The last character is not an underscore.
+renders text. The keys to this object must be in the form of an `Identifier`_.
+The values in this object must be in the form of a `Parameter Object`_.
 
 
 Parameter Object
@@ -506,8 +493,7 @@ always have at least one known text string available to it.
 
 Identifier
 ----------
-Identifiers are strings that are unique throughout the *entire* context of the
-Form. This string must adhere to the following restrictions:
+Identifiers are strings that adhere to the following restrictions:
 
 * Consists of 2 or more of the following characters:
 
@@ -515,21 +501,16 @@ Form. This string must adhere to the following restrictions:
     through 007A)
   * Latin numeric digits ("0" through "9"; Unicode 0030 through 0039)
   * Underscore characters ("_"; Unicode 005F)
-  * Hyphen characters ("-"; Unicode 002D)
 
-* The first character is a lowercase latin alphabetic character.
-* The last character is a lowercase latin alphabetic character or latin numeric
-  digit.
-* Does not contain consecutive underscore and/or hyphen characters.
+* The first character is an alphabetic character.
+* The last character is not an underscore.
+* Does not contain consecutive underscore characters.
 
-These identifiers are can be used both by expressions within this Form, and by
-any supplemental configuration documents that may augment this Form.
-
-Example Unique Identifiers:
+Example Identifiers:
 
 * page1
 * grp_a
-* ref-1-2-alpha
+* ref_1_2_alpha
 
 
 Text Formatting and Parameters
