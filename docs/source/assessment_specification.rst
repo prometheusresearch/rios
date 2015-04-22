@@ -157,7 +157,7 @@ within an Assessment Document.
 
 For consistency's and interoperability's sake, some common data elements are
 defined below, but note that the Metadata Collection Object has no required or
-pre-defined properties, and can therefore contain any (legal JSON) property
+predefined properties, and can therefore contain any (legal JSON) property
 names and value data types. Software that consumes Assessment Documents *must*
 ignore any property whose name it does not recognize or support.
 
@@ -173,7 +173,7 @@ dateCompleted   Assessment          String      2012-11-20T10:46:08 An `ISO 8601
                                                                     indicates when data collection for the Assessment completed.
 timeTaken       Assessment, Value   Number      23500               An integer that indicates the number of milliseconds that
                                                                     completion of the scoped object took. E.g., it took 23500
-                                                                    seconds for the respondant to provide the value for a
+                                                                    seconds for the respondent to provide the value for a
                                                                     particular Field.
 =============== =================== =========== =================== =============================================================
 

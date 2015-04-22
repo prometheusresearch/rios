@@ -550,7 +550,7 @@ supports two pieces of functionality:
 
     How old is?
 
-  And the second exaple would look like::
+  And the second example would look like::
 
     How old is this subject?
 

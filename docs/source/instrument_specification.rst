@@ -105,7 +105,7 @@ of several properties:
     :Description: This property allows the Instrument author to explain what
                   the Field is, what it's being used for, or any other
                   helpful information about the Field. This property is
-                  optional and is not intented to ever be shown to an end-user.
+                  optional and is not intended to ever be shown to an end-user.
 
 ``type``
     :Type: Enumerated String or `Type Object`_
@@ -113,7 +113,7 @@ of several properties:
     :Description: This property identifies the type of data that will be
                   returned as a response to this Field. It can be specified by
                   either indicating the identifier of one of the `Base Types`_,
-                  the indentifier of one of the Types defined in the `Type
+                  the identifier of one of the Types defined in the `Type
                   Collection Object`_, or it can be a `Type Object`_ that
                   defines a Type directly within this Field.
 
@@ -155,9 +155,9 @@ of several properties:
 
 ``identifiable``
     :Type: Boolean
-    :Description: Indicates whether or not the reponse for this Field will (or
+    :Description: Indicates whether or not the response for this Field will (or
                   can) contain information that can be used to identify the
-                  subject or respondant. This is typically used to flag fields
+                  subject or respondent. This is typically used to flag fields
                   that would contain information that could be classified as
                   "Protected Health Information" (`HIPAA PHI`_), "Personally
                   Identifiable Information" (`NIST PII`_), "Personal Data"
@@ -289,9 +289,9 @@ data points that are to be collected for reach row.
     :Type: Enumerated String or `Type Object`_
     :Constraints: Required
     :Description: This property identifies the type of data that will be
-                  returned as a response to this Coumn. It can be specified by
+                  returned as a response to this Column. It can be specified by
                   either indicating the identifier of one of the simple `Base
-                  Types`_, the indentifier of one of the Types defined in the
+                  Types`_, the identifier of one of the Types defined in the
                   `Type Collection Object`_, or it can be a `Type Object`_ that
                   defines a simple Type directly within this Field.
 
@@ -303,9 +303,9 @@ data points that are to be collected for reach row.
 
 ``identifiable``
     :Type: Boolean
-    :Description: Indicates whether or not the reponse for this Field will (or
+    :Description: Indicates whether or not the response for this Field will (or
                   can) contain information that can be used to identify the
-                  subject or respondant. This is typically used to flag fields
+                  subject or respondent. This is typically used to flag fields
                   that would contain information that could be classified as
                   "Protected Health Information" (`HIPAA PHI`_), "Personally
                   Identifiable Information" (`NIST PII`_), "Personal Data"
@@ -344,7 +344,7 @@ field.
 Base Types
 ----------
 The following Types are considered part of the basic functionality provided by
-Instrument Definitions and can be used when specifiying the type of a Field, or
+Instrument Definitions and can be used when specifying the type of a Field, or
 when specifying a ``base`` when defining a new type in a `Type Object`_.
 
 =============== ======= ===========

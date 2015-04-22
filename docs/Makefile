@@ -195,3 +195,6 @@ livehtml:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	sphinx-autobuild -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 
+spelling:
+	$(SPHINXBUILD) -b spelling $(ALLSPHINXOPTS) $(BUILDDIR)/html
+
