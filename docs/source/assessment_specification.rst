@@ -175,6 +175,9 @@ timeTaken       Assessment, Value   Number      23500               An integer t
                                                                     completion of the scoped object took. E.g., it took 23500
                                                                     seconds for the respondent to provide the value for a
                                                                     particular Field.
+calculations    Assessment          Object                          An object that contains the results from executing the
+                                                                    calculations defined in the corresponding Calculation Set
+                                                                    Definition.
 =============== =================== =========== =================== =============================================================
 
 .. _`RFC5646`: http://tools.ietf.org/html/rfc5646

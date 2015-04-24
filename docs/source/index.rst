@@ -22,6 +22,7 @@ Specifications
    :maxdepth: 1
 
    instrument_specification
+   calculation_set_specification
    assessment_specification
    web_form_specification
 

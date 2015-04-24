@@ -1,0 +1,354 @@
+****************************************
+Calculation Set Definition Specification
+****************************************
+
+.. contents:: Table of Contents
+
+
+Overview
+========
+A PRISMH Calculation Set Definition is a standard means to represent a set of
+calculations that can be applied to the data collected in an Assessment
+Document for a given Instrument Definition.
+
+
+Format
+======
+Calculation Set Definitions are stored and exchanged as `JSON`_ (JavaScript
+Object Notation) objects. The structure of these objects must adhere to the
+rules set forth in this document.
+
+.. _`JSON`: http://json.org/
+
+
+Structure
+=========
+
+Root Object
+-----------
+The Root Object of a Calculation Set Definition consists of a few properties:
+
+``instrument``
+    :Type: `Instrument Reference Object`_
+    :Constraints: Required
+    :Description: This property specifies which Instrument Definition the
+                  calculations defined within this definition applies to.
+
+``calculations``
+    :Type: Array of `Calculation Object`_
+    :Constraints: Required; Must contain at least one `Calculation Object`_
+    :Description: This property contains the set of calculations that should be
+                  applied to an Assessment Document. The ordering of
+                  calculations in this array is important, as they are always
+                  executed in the specified order.
+
+
+Instrument Reference Object
+---------------------------
+An Instrument Reference Object is the means for an Assessment Document to
+reference the exact Instrument (and version of that Instrument) that the
+values contained within are in reference to.
+
+``id``
+    :Type: String
+    :Constraints: Required; Must be a URI as described in `RFC3986`_
+
+                  .. _`RFC3986`: http://tools.ietf.org/html/rfc3986
+    :Description: This property is a reference to the `id` property on the root
+                  object of an Instrument Definition. It is meant to specify
+                  the exact Instrument this Assessment Document is in response
+                  to.
+
+``version``
+    :Type: String
+    :Constraints: Required
+    :Description: This property is a reference the the `version` property on
+                  the root object of an Instrument Definition. It is meant to
+                  specify the exact revision of the Instrument this Assessment
+                  Document is in response to.
+
+
+Calculation Object
+------------------
+Calculation Objects are the core of what makes up a Calculation Set Definition.
+They describe the values that should be calculated for an Assessment Document.
+These objects consist of several properties:
+
+``id``
+    :Type: String
+    :Constraints: Required; Must be an `Identifier`_
+    :Description: This property uniquely identifies the calculation so that its
+                  value can be referred to in subsequent documents or
+                  calculations. It must be unique amongst all calculations
+                  and fields IDs from the original Instrument Definition.
+
+``description``
+    :Type: String
+    :Description: This property allows the Calculation Set author to explain
+                  what the calculation is, what it's being used for, or any
+                  other helpful information. This property is optional and is
+                  not intended to ever be shown to an end-user.
+
+``type``
+    :Type: Enumerated String
+    :Constraints: Required; Must be an Instrument Definition Simple Type
+    :Description: This property identifies the type of data that will be
+                  returned as a response to this Field. 
+
+``method``
+    :Type: Enumerated String
+    :Constraints: Required
+    :Description: This property identifies method that will be used to
+                  perform the calculations.
+    :PossibleValues: ========== ===============================================
+                     Method     Description
+                     ========== ===============================================
+                     python     The calculation will be in the form of a
+                                single-line Python v2.7 expression, or the name
+                                of a Python callable that can be imported and
+                                executed.
+                     htsql      The calculation will be in the form of an
+                                HTSQL v2 expression.
+                     ========== ===============================================
+
+``options``
+    :Type: Object
+    :Constraints: The contents of the Object depend on the method specified in
+                  the ``method`` property. See the `Calculation Methods`_
+                  section for information on which options are needed for which
+                  methods.
+    :Description: This property allows the calculation author to provide the
+                  necessary information to the calculation engine in order to
+                  perform the operation.
+
+
+Identifier
+----------
+Identifiers are strings that adhere to the following restrictions:
+
+* Consists of 2 or more of the following characters:
+
+  * Lowercase latin alphabetic characters ("a" through "z"; Unicode 0061
+    through 007A)
+  * Latin numeric digits ("0" through "9"; Unicode 0030 through 0039)
+  * Underscore characters ("_"; Unicode 005F)
+
+* The first character is an alphabetic character.
+* The last character is not an underscore.
+* Does not contain consecutive underscore characters.
+
+Example Identifiers:
+
+* page1
+* grp_a
+* ref_1_2_alpha
+
+
+Calculation Methods
+===================
+
+python
+------
+The ``python`` method provides two approaches to specify the calculation, both
+being implemented using the `Python v2.7 language`_. The approach used is based
+on which properties are passed into the accompanying ``options`` object.
+
+.. _`Python v2.7 language`: https://docs.python.org/2.7/reference/index.html
+
+
+Expressions
+```````````
+The first approach is through an explicitly defined expression. In the
+``options`` object that accompanies the calculation definition, there must be a
+property named ``expression`` that contains a single-line Python expression.
+The value that results from the evaluation of this expression is what will be
+stored as the result of the calculation.
+
+This expression will be evaluated within a scope that includes:
+
+* The `cmath`_ module
+* The `datetime`_ module
+* The `math`_ module
+* The `re`_ module
+* A ``assessment`` variable that contains the Assessment values (described in
+  `Assessment Variable`_)
+* A ``calculations`` variable that contains the previously calculation values
+  (described in `Previous Calculation Variable`_)
+
+.. _`cmath`: https://docs.python.org/2/library/cmath.html
+.. _`math`: https://docs.python.org/2/library/math.html
+.. _`datetime`: https://docs.python.org/2/library/datetime.html
+.. _`re`: https://docs.python.org/2/library/re.html
+
+Given an Instrument that defines two fields, "foo" and "bar", the following are
+some examples of what expressions could look like:
+
+.. code-block:: python
+
+    assessment['foo'] * 2
+
+    assessment['foo'] + math.log(assessment['foo'])
+
+    'GOOD' if re.match(r'^[a-z]{3}$', assessment['bar']) else 'BAD'
+
+
+Callables
+`````````
+The second approach is through specifying a callable object by name. In the
+``options`` object that accompanies the calculation definition, there must be a
+property named ``callable`` that contains the dot-separated, fully-qualified
+path to the callable. The value that this callable returns is what will be
+stored as the result of the calculation.
+
+When executed, the callable object will receive the following arguments:
+
+``assessment``
+    A dictionary containing the Assessment values (described in `Assessment
+    Variable`_).
+
+``calculations``
+    A dictionary contain the previous calculation values (described in
+    `Previous Calculation Variable`_).
+
+
+If the ``callable`` property had the value "mymodule.my_calculation", it could
+be implemented as follows:
+
+.. code-block:: python
+
+    # mymodule.py
+
+    def my_calculation(assessment, calculations):
+        return assessment['foo'] * 2
+
+Or,
+
+.. code-block:: python
+
+    # mymodule.py
+
+    class Calculator(object):
+        def __call__(self, assessment, calculations):
+            return assessment['foo'] * 2
+
+    my_calculation = Calculator()
+
+
+Assessment Variable
+```````````````````
+In both execution approaches, a variable named ``assessment`` is made available
+that contains the values from the Assessment. This variable is a dictionary
+whose keys correspond to the field identifiers from the Instrument. All field
+identifiers will be present as keys, even if there is no value (e.g., ``None``)
+recorded for the field.
+
+The values for these keys will be coerced to the appropriate Python types
+according to the following table:
+
+=================== ===========================================================
+Instrument Type     Python Type
+=================== ===========================================================
+integer             int
+float               float
+text                unicode
+boolean             bool
+date                datetime.date
+time                datetime.time
+dateTime            datetime.datetime
+enumeration         unicode
+enumerationSet      list of unicode
+recordList          list of dictionaries whose keys are the sub-field
+                    identifiers
+matrix              dictionary whose keys are the row identifiers, and the
+                    values are then dictionaries whose keys are the column
+                    identifiers
+=================== ===========================================================
+
+
+Previous Calculation Variable
+`````````````````````````````
+In both execution approaches, a variable named ``calculations`` is made
+available that contains the values that resulted from previous calculations
+performed during **this execution**. Calculations within a given Calculation
+Set are executed in the order they're listed in the definition. The resulting
+values are then passed to each subsequent calculation.
+
+For example, imagine a Calculation Set definition where three calculations are
+defined in the following order: "foo", "bar", "baz". When the "foo" calculation
+is executed, the ``calculations`` dictionary will be empty. When the "bar"
+calculation is executed, the ``calculations`` dictionary will have a single
+key, "foo", with the results of the "foo" calculation. When the "baz"
+calculation is executed, the ``calculations`` dictionary will have two keys,
+"foo" and "bar", containing their respective calculation results.
+
+
+htsql
+-----
+The ``htsql`` method allows calculations to be written as `HTSQL v2`_
+expressions. The expression to execute must be specified in an ``expression``
+property on the accompanying ``options`` object.
+
+.. _`HTSQL v2`: http://htsql.org/doc/
+
+Given an instrument that defines two fields, "foo" and "bar", the following are
+some examples of what expressions could look like:
+
+.. code-block:: htsql
+
+    $foo * 2
+
+    trunc($foo) + 42
+
+    if($bar > 10, 'GOOD', 'BAD')
+
+
+Assessment Parameters
+`````````````````````
+Assessment values for simple-typed fields will be available to your expression
+as parameters that can be accessed using reference syntax (e.g., prefixing the
+name with ``$`` -- so, the "foo" field would be access liked ``$foo``).
+
+To access the values of matrix cells, you'll need to concatenate the ID of the
+matrix field with the ID of the row and the ID of the column with underscores.
+For example, ``$matrixfield_firstrow_somecolumn``.
+
+Due to a limitation of the the mechanics of HTSQL, the values for the subfields
+in recordList questions will not be available for use by your expressions.
+
+The values for these parameters will be coerced to the appropriate HTSQL types
+according to the following table:
+
+=================== ===========================================================
+Instrument Type     HTSQL Type
+=================== ===========================================================
+integer             integer
+float               float
+text                untyped
+boolean             boolean
+date                date
+time                time
+dateTime            datetime
+enumeration         untyped
+enumerationSet      record of untyped
+=================== ===========================================================
+
+
+Previous Calculation Parameters
+```````````````````````````````
+Much like the Assessment values, the values that resulted from previous
+calculations performed during **this execution** will be available as
+referenceable (``$``-prefixed) parameters. Calculations within a given
+Calculation Set are executed in the order they're listed in the definition. The
+resulting values are then passed to each subsequent calculation.
+
+
+
+Calculation Results
+===================
+The results of the calculations in a Calculation Set will be stored in the
+document-level ``meta`` structure of the Assessment under the property named
+``calculations``. This property will be an object whose keys are the
+identifiers of the calculations, and whose values are the results of those
+calculations. All calculation identifiers must be present in the object, even
+those whose calculations resulted in a ``null``/``None``.
+
