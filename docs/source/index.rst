@@ -25,6 +25,7 @@ Specifications
    calculation_set_specification
    assessment_specification
    web_form_specification
+   sms_interaction_specification
 
 
 Examples
