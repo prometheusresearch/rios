@@ -1,3 +1,7 @@
+.. image:: https://readthedocs.org/projects/prismh-specification/badge/?version=latest
+   :target: https://prismh-specification.readthedocs.org
+   :alt: Documentation Status
+
 ****************************************************************
 PRISMH - Portable Research Instrument Standard for Mental Health
 ****************************************************************
@@ -6,14 +10,7 @@ Overview
 ========
 
 This repository contains the source materials needed to produce the PRISMH
-documentation site and specifications. It consists of two main directories:
-
-``/docs/``
-    This houses the documentation around the PRISMH specifications.
-
-``/tests/``
-    This houses a battery of test files that can be used for reference to
-    validate implementations of the specifications set forth by PRISMH.
+documentation site and specifications.
 
 
 Contributing
