@@ -304,7 +304,7 @@ particular condition is met. This object consists of the following properties:
                      ================== =============================== =================== ===========
 
 ``targets``
-    :Type: Array of `Identifier`_
+    :Type: Array of `Compound Identifier`_
     :Description: This property specifies which Element(s) are impacted by the
                   ``action`` being executed. These Identifiers can either be
                   either references to the ``fieldId`` of Questions, the ``id``
@@ -512,6 +512,18 @@ Example Identifiers:
 * page1
 * grp_a
 * ref_1_2_alpha
+
+
+Compound Identifier
+-------------------
+Compound Identifiers are strings that are combinations of `Identifiers`_ that
+are joined by a single period character (Unicode 002E).
+
+Example Identifiers:
+
+* page1
+* foo.bar
+* grp_a.f00.blah
 
 
 Text Formatting and Parameters
