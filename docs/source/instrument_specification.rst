@@ -17,7 +17,8 @@ Format
 ======
 Instrument Definitions are stored and exchanged as `JSON`_ (JavaScript Object
 Notation) objects. The structure of these objects must adhere to the rules set
-forth in this document.
+forth in this document. When stored in files, these files must be UTF-8
+encoded.
 
 .. _`JSON`: http://json.org/
 
