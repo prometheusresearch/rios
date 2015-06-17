@@ -302,6 +302,16 @@ some examples of what expressions could look like:
 
     if($bar > 10, 'GOOD', 'BAD')
 
+    {$foo + $bar}
+
+    /{($bar - $foo) / $foo}
+
+If the value returned by the HTSQL expression is scalar, that value is what is
+kept as the result. If the value returned is a Record, then the value in the
+first column of that Record is kept as the result. If the value return is a
+list of Records, then the value in the first column of the first Record is kept
+as the result.
+
 
 Assessment Parameters
 `````````````````````
