@@ -7,9 +7,10 @@ Web Form Configuration Specification
 
 Overview
 ========
-A PRISMH Web Form Configuration is a standard means to augment an Instrument
-Definition with additional configuration and meta-data that allows the
-Instrument to be administered via a web-based application.
+A PRISMH Web Form Configuration is a standard means to augment an
+:doc:`Instrument Definition </instrument_specification>` with additional
+configuration and meta-data that allows the Instrument to be administered via a
+web-based application.
 
 
 Format
@@ -32,8 +33,8 @@ The Root Object of a Web Form Configuration consists of several properties:
 ``instrument``
     :Type: `Instrument Reference Object`_
     :Constraints: Required
-    :Description: This property specifies which Instrument Definition the Form
-                  is based on.
+    :Description: This property specifies which :doc:`Instrument Definition
+                  </instrument_specification>` the Form is based on.
 
 ``defaultLocalization``
     :Type: String; Must be in the form of a `RFC5646`_ Language Tag
@@ -73,8 +74,8 @@ The Root Object of a Web Form Configuration consists of several properties:
 Instrument Reference Object
 ---------------------------
 An Instrument Reference Object is the means for a Web Form Configuration to
-reference the exact Instrument (and version of that Instrument) that the
-responses contained within are in reference to.
+reference the exact :doc:`Instrument </instrument_specification>` (and version
+of that Instrument) that the responses contained within are in reference to.
 
 ``id``
     :Type: String
@@ -82,17 +83,18 @@ responses contained within are in reference to.
 
                   .. _`RFC3986`: http://tools.ietf.org/html/rfc3986
     :Description: This property is a reference to the ``id`` property on the
-                  root object of an Instrument Definition. It is meant to
-                  specify the exact Instrument this Web Form Configuration is
-                  based on.
+                  root object of an :doc:`Instrument Definition
+                  </instrument_specification>`. It is meant to specify the
+                  exact Instrument this Web Form Configuration is based on.
 
 ``version``
     :Type: String
     :Constraints: Required
     :Description: This property is a reference the the ``version`` property on
-                  the root object of an Instrument Definition. It is meant to
-                  specify the exact revision of the Instrument this Form
-                  Configuration is based on.
+                  the root object of an :doc:`Instrument Definition
+                  </instrument_specification>`. It is meant to specify the
+                  exact revision of the Instrument this Form Configuration is
+                  based on.
 
 
 Page Object
@@ -171,8 +173,9 @@ user so that they may provide a response.
     :Type: String
     :Constraints: Required
     :Description: This property is a reference to the ID of a Field that is
-                  defined in the associated Instrument Definition. A Field
-                  ID can only be used in one Question Object in a given Form.
+                  defined in the associated :doc:`Instrument Definition
+                  </instrument_specification>`. A Field ID can only be used in
+                  one Question Object in a given Form.
 
 ``text``
     :Type: `Localized String Object`_
@@ -251,8 +254,8 @@ simple facets of a Form such as Enumerations and Matrix Rows.
     :Type: String
     :Constraints: Required
     :Description: This property is a reference to the ID of an Enumeration or
-                  Row on the Field that is defined in the associated Instrument
-                  Definition.
+                  Row on the Field that is defined in the associated
+                  :doc:`Instrument Definition </instrument_specification>`.
 
 ``text``
     :Type: `Localized String Object`_
@@ -410,9 +413,9 @@ Unprompted Collection Object
 ----------------------------
 An Unprompted Collection Object consists of one to many properties where the
 property name serves as a reference to the ID of a Field defined in the
-associated Instrument, and the value of that property is an
-`Unprompted Object`_ which contains the the information about how to handle
-that Field.
+associated :doc:`Instrument Definition </instrument_specification>`, and the
+value of that property is an `Unprompted Object`_ which contains the the
+information about how to handle that Field.
 
 
 Unprompted Object

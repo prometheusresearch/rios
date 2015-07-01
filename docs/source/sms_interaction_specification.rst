@@ -8,8 +8,9 @@ SMS Interaction Configuration Specification
 Overview
 ========
 A PRISMH SMS Interaction Configuration is a standard means to augment an
-Instrument Definition with additional configuration and meta-data that allows
-the Instrument to be administered via an SMS text message-based application.
+:doc:`Instrument Definition </instrument_specification>` with additional
+configuration and meta-data that allows the Instrument to be administered via
+an SMS text message-based application.
 
 
 Format
@@ -33,8 +34,8 @@ properties:
 ``instrument``
     :Type: `Instrument Reference Object`_
     :Constraints: Required
-    :Description: This property specifies which Instrument Definition the
-                  Interaction is based on.
+    :Description: This property specifies which :doc:`Instrument Definition
+                  </instrument_specification>` the Interaction is based on.
 
 ``defaultLocalization``
     :Type: String; Must be in the form of a `RFC5646`_ Language Tag
@@ -60,8 +61,9 @@ properties:
 Instrument Reference Object
 ---------------------------
 An Instrument Reference Object is the means for an SMS Interaction
-Configuration to reference the exact Instrument (and version of that
-Instrument) that the responses contained within are in reference to.
+Configuration to reference the exact :doc:`Instrument
+</instrument_specification>` (and version of that Instrument) that the
+responses contained within are in reference to.
 
 ``id``
     :Type: String
@@ -69,16 +71,18 @@ Instrument) that the responses contained within are in reference to.
 
                   .. _`RFC3986`: http://tools.ietf.org/html/rfc3986
     :Description: This property is a reference to the ``id`` property on the
-                  root object of an Instrument Definition. It is meant to
-                  specify the exact Instrument this SMS Interaction
-                  Configuration is based on.
+                  root object of an :doc:`Instrument Definition
+                  </instrument_specification>`. It is meant to specify the
+                  exact Instrument this SMS Interaction Configuration is based
+                  on.
 
 ``version``
     :Type: String
     :Constraints: Required
     :Description: This property is a reference the the ``version`` property on
-                  the root object of an Instrument Definition. It is meant to
-                  specify the exact revision of the Instrument this Interaction
+                  the root object of an :doc:`Instrument Definition
+                  </instrument_specification>`. It is meant to specify the
+                  exact revision of the Instrument this Interaction
                   Configuration is based on.
 
 
@@ -148,18 +152,19 @@ several properties:
 
 Question Object
 ---------------
-A Question Object defines how a Field from an Instrument is presented to the
-user so that they may provide a response.
+A Question Object defines how a Field from an :doc:`Instrument Definition
+</instrument_specification>` is presented to the user so that they may provide
+a response.
 
 ``fieldId``
     :Type: String
     :Constraints: Required
     :Description: This property is a reference to the ID of a Field that is
-                  defined in the associated Instrument Definition. A Field
-                  ID can only be used in one Question Object in a given
-                  Interaction. Interaction Questions can only represent 
-                  Instrument Fields that are based on Simple Instrument data
-                  types.
+                  defined in the associated :doc:`Instrument Definition
+                  </instrument_specification>`. A Field ID can only be used in
+                  one Question Object in a given Interaction. Interaction
+                  Questions can only represent Instrument Fields that are based
+                  on Simple Instrument data types.
 
 ``text``
     :Type: `Localized String Object`_
@@ -194,8 +199,8 @@ simple facets of an Interaction such as Enumerations.
     :Type: String
     :Constraints: Required
     :Description: This property is a reference to the ID of an Enumeration or
-                  Row on the Field that is defined in the associated Instrument
-                  Definition.
+                  Row on the Field that is defined in the associated
+                  :doc:`Instrument Definition </instrument_specification>`.
 
 ``text``
     :Type: `Localized String Object`_

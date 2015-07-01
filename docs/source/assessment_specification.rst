@@ -8,8 +8,8 @@ Assessment Document Specification
 Overview
 ========
 A PRISMH Assessment Document is a standard means to represent a set of values
-that fulfill the requirements described in a corresponding Instrument
-Definition.
+that fulfill the requirements described in a corresponding :doc:`Instrument
+Definition </instrument_specification>`.
 
 
 Format
@@ -32,9 +32,9 @@ The Root Object of an Assessment Document consists of several properties:
 ``instrument``
     :Type: `Instrument Reference Object`_
     :Constraints: Required
-    :Description: This property specifies which Instrument Definition the
-                  values contained within this Assessment Document
-                  correspond to.
+    :Description: This property specifies which :doc:`Instrument Definition
+                  </instrument_specification>` the values contained within this
+                  Assessment Document correspond to.
 
 ``meta``
     :Type: `Metadata Collection Object`_
@@ -46,14 +46,15 @@ The Root Object of an Assessment Document consists of several properties:
     :Type: `Value Collection Object`_
     :Constraints: Required
     :Description: This property contains the values for the Fields defined
-                  in the associated Instrument Definition.
+                  in the associated :doc:`Instrument Definition
+                  </instrument_specification>`.
 
 
 Instrument Reference Object
 ---------------------------
 An Instrument Reference Object is the means for an Assessment Document to
-reference the exact Instrument (and version of that Instrument) that the
-values contained within are in reference to.
+reference the exact :doc:`Instrument </instrument_specification>` (and version
+of that Instrument) that the values contained within are in reference to.
 
 ``id``
     :Type: String
@@ -61,17 +62,18 @@ values contained within are in reference to.
 
                   .. _`RFC3986`: http://tools.ietf.org/html/rfc3986
     :Description: This property is a reference to the `id` property on the root
-                  object of an Instrument Definition. It is meant to specify
-                  the exact Instrument this Assessment Document is in response
-                  to.
+                  object of an :doc:`Instrument Definition
+                  </instrument_specification>`. It is meant to specify the
+                  exact Instrument this Assessment Document is in response to.
 
 ``version``
     :Type: String
     :Constraints: Required
     :Description: This property is a reference the the `version` property on
-                  the root object of an Instrument Definition. It is meant to
-                  specify the exact revision of the Instrument this Assessment
-                  Document is in response to.
+                  the root object of an :doc:`Instrument Definition
+                  </instrument_specification>`. It is meant to specify the
+                  exact revision of the Instrument this Assessment Document is
+                  in response to.
 
 
 Value Collection Object
@@ -81,8 +83,9 @@ property name serves as a reference to the ID of a Field defined in the
 associated Instrument, and the value of that property is a `Value Object`_
 which contains the actual value for the Field.
 
-This object must contain a property for *every* Field Object defined in the
-corresponding Field Collection Object in the Instrument Definition.
+This object must contain a property for **every** Field Object defined in the
+corresponding Field Collection Object in the :doc:`Instrument Definition
+</instrument_specification>`.
 
 
 Value Object
@@ -98,7 +101,8 @@ A Value Object contains a value for a Field on an Instrument.
                   for ``text`` data types, or empty arrays for
                   ``enumerationSet`` or ``recordList`` data types).
     :Type: Dependent on the type defined by the corresponding Field Object
-           in the Instrument Definition. See following table:
+           in the :doc:`Instrument Definition </instrument_specification>`. See
+           following table:
 
            ==================  ===================  ===========
            Field Data Type     JSON Data Type       Constraints
@@ -144,10 +148,11 @@ property name serves as a reference to the ID of a Row Object defined in the
 associated Matrix Field, and the value of that property is a `Value Collection
 Object`_ which contains the value(s) for the associated Column Objects.
 
-This object must contain a property for *every* Row Object defined in the
-corresponding Matrix Field Object in the Instrument Definition. The embedded
-Value Collection Objects must contain a property for *every* Column Object from
-the corresponding Matrix Field Object.
+This object must contain a property for **every** Row Object defined in the
+corresponding Matrix Field Object in the :doc:`Instrument Definition
+</instrument_specification>`. The embedded Value Collection Objects must
+contain a property for *every* Column Object from the corresponding Matrix
+Field Object.
 
 
 Metadata Collection Object

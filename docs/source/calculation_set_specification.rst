@@ -8,8 +8,9 @@ Calculation Set Definition Specification
 Overview
 ========
 A PRISMH Calculation Set Definition is a standard means to represent a set of
-calculations that can be applied to the data collected in an Assessment
-Document for a given Instrument Definition.
+calculations that can be applied to the data collected in an :doc:`Assessment
+Document </assessment_specification>` for a given :doc:`Instrument Definition
+</instrument_specification>`.
 
 
 Format
@@ -32,23 +33,25 @@ The Root Object of a Calculation Set Definition consists of a few properties:
 ``instrument``
     :Type: `Instrument Reference Object`_
     :Constraints: Required
-    :Description: This property specifies which Instrument Definition the
-                  calculations defined within this definition applies to.
+    :Description: This property specifies which :doc:`Instrument Definition
+                  </instrument_specification>` the calculations defined within
+                  this definition applies to.
 
 ``calculations``
     :Type: Array of `Calculation Object`_
     :Constraints: Required; Must contain at least one `Calculation Object`_
     :Description: This property contains the set of calculations that should be
-                  applied to an Assessment Document. The ordering of
-                  calculations in this array is important, as they are always
-                  executed in the specified order.
+                  applied to an :doc:`Assessment Document
+                  </assessment_specification>`. The ordering of calculations in
+                  this array is important, as they are always executed in the
+                  specified order.
 
 
 Instrument Reference Object
 ---------------------------
-An Instrument Reference Object is the means for an Assessment Document to
-reference the exact Instrument (and version of that Instrument) that the
-values contained within are in reference to.
+An Instrument Reference Object is the means for a Calculation Set Definition to
+reference the exact :doc:`Instrument </instrument_specification>` (and version
+of that Instrument) that the values contained within are in reference to.
 
 ``id``
     :Type: String
@@ -56,24 +59,26 @@ values contained within are in reference to.
 
                   .. _`RFC3986`: http://tools.ietf.org/html/rfc3986
     :Description: This property is a reference to the `id` property on the root
-                  object of an Instrument Definition. It is meant to specify
-                  the exact Instrument this Assessment Document is in response
-                  to.
+                  object of an :doc:`Instrument Definition
+                  </instrument_specification>`. It is meant to specify the
+                  exact Instrument this Calculation Set is augmenting.
 
 ``version``
     :Type: String
     :Constraints: Required
     :Description: This property is a reference the the `version` property on
-                  the root object of an Instrument Definition. It is meant to
-                  specify the exact revision of the Instrument this Assessment
-                  Document is in response to.
+                  the root object of an :doc:`Instrument Definition
+                  </instrument_specification>`. It is meant to specify the
+                  exact revision of the Instrument this Calculation Set is
+                  augmenting.
 
 
 Calculation Object
 ------------------
 Calculation Objects are the core of what makes up a Calculation Set Definition.
-They describe the values that should be calculated for an Assessment Document.
-These objects consist of several properties:
+They describe the values that should be calculated for an :doc:`Assessment
+Document </assessment_specification>`.  These objects consist of several
+properties:
 
 ``id``
     :Type: String
@@ -81,7 +86,8 @@ These objects consist of several properties:
     :Description: This property uniquely identifies the calculation so that its
                   value can be referred to in subsequent documents or
                   calculations. It must be unique amongst all calculations
-                  and fields IDs from the original Instrument Definition.
+                  and fields IDs from the original :doc:`Instrument Definition
+                  </instrument_specification>`.
 
 ``description``
     :Type: String
@@ -92,7 +98,8 @@ These objects consist of several properties:
 
 ``type``
     :Type: Enumerated String
-    :Constraints: Required; Must be an Instrument Definition Simple Type
+    :Constraints: Required; Must be an :doc:`Instrument Definition
+                  </instrument_specification>` Simple Type
     :Description: This property identifies the type of data that will be
                   returned as a response to this Field. 
 
@@ -238,10 +245,11 @@ Or,
 Assessment Variable
 ```````````````````
 In both execution approaches, a variable named ``assessment`` is made available
-that contains the values from the Assessment. This variable is a dictionary
-whose keys correspond to the field identifiers from the Instrument. All field
-identifiers will be present as keys, even if there is no value (e.g., ``None``)
-recorded for the field.
+that contains the values from the :doc:`Assessment
+</assessment_specification>`. This variable is a dictionary whose keys
+correspond to the field identifiers from the Instrument. All field identifiers
+will be present as keys, even if there is no value (e.g., ``None``) recorded
+for the field.
 
 The values for these keys will be coerced to the appropriate Python types
 according to the following table:
@@ -315,9 +323,10 @@ as the result.
 
 Assessment Parameters
 `````````````````````
-Assessment values for simple-typed fields will be available to your expression
-as parameters that can be accessed using reference syntax (e.g., prefixing the
-name with ``$`` -- so, the "foo" field would be access liked ``$foo``).
+:doc:`Assessment </assessment_specification>` values for simple-typed fields
+will be available to your expression as parameters that can be accessed using
+reference syntax (e.g., prefixing the name with ``$`` -- so, the "foo" field
+would be access liked ``$foo``).
 
 To access the values of matrix cells, you'll need to concatenate the ID of the
 matrix field with the ID of the row and the ID of the column with underscores.
@@ -357,9 +366,10 @@ resulting values are then passed to each subsequent calculation.
 Calculation Results
 ===================
 The results of the calculations in a Calculation Set will be stored in the
-document-level ``meta`` structure of the Assessment under the property named
-``calculations``. This property will be an object whose keys are the
-identifiers of the calculations, and whose values are the results of those
-calculations. All calculation identifiers must be present in the object, even
-those whose calculations resulted in a ``null``/``None``.
+document-level ``meta`` structure of the :doc:`Assessment Document
+</assessment_specification>` under the property named ``calculations``. This
+property will be an object whose keys are the identifiers of the calculations,
+and whose values are the results of those calculations. All calculation
+identifiers must be present in the object, even those whose calculations
+resulted in a ``null``/``None``.
 
