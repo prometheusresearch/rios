@@ -55,10 +55,3 @@ Change History
 
    change_history
 
-
-Indices and Tables
-==================
-
-* :ref:`genindex`
-* :ref:`search`
-
