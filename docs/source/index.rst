@@ -6,20 +6,21 @@ Welcome! This site is the home of the documentation and specifications around
 **PRISMH**, the Portable Research Instrument Standard for Mental Health.
 
 
-Background
-==========
+Introduction
+============
 
 .. toctree::
    :maxdepth: 2
 
    background
+   overview
 
 
 Specifications
 ==============
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    instrument_specification
    calculation_set_specification
@@ -32,7 +33,7 @@ Examples
 ========
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    examples/simple
    examples/alltypes
