@@ -342,7 +342,12 @@ that component. This object consists of a couple properties:
     :Type: Enumerated String
     :Constraints: Required
     :Description: This property indicates the type of the front-end widget that
-                  should be used. The widgets listed 
+                  should be used. The following listed widgets are considered
+                  the "default" set and must be recognized by any consumer of
+                  the Web Form. Custom and/or implementation-specific widget
+                  types are allowed to be used. If a consumer of a Web Form
+                  encounters a widget type it does not recognize, it must
+                  default to using the widgets indicated below.
     :PossibleValues: ================== ======================= ===========
                      Type               Applicable Field Types  Description
                      ================== ======================= ===========
@@ -367,7 +372,10 @@ that component. This object consists of a couple properties:
                   the ``type`` property.
     :Descriptions: This property allows the Form author to provide
                    configuration parameters to the widget being used. This
-                   property is optional.
+                   property is optional. The base options for the "default"
+                   widget set are listed below. If a consumer of a Web Form
+                   encounters an option it does not recognize, it must be
+                   ignored.
     :PossibleValues: ============== =================================== =========== ===========
                      Option         Applicable Widgets                  Default     Description
                      ============== =================================== =========== ===========
