@@ -516,8 +516,8 @@ Example Identifiers:
 
 Compound Identifier
 -------------------
-Compound Identifiers are strings that are combinations of `Identifiers`_ that
-are joined by a single period character (Unicode 002E).
+Compound Identifiers are strings that are combinations of `Identifier`_ strings
+that are joined by a single period character (Unicode 002E).
 
 Example Identifiers:
 

@@ -89,7 +89,7 @@ of time. It must contain at least one of the following properties:
 
 ``warn``
     :Type: `Timeout Details Object`_
-    :Description: This propery describes the warning phase of a timeout. When
+    :Description: This property describes the warning phase of a timeout. When
                   the specified threshold is met, a message is sent to the user
                   to warn them about their impending timeout.
 
@@ -108,7 +108,7 @@ Timeout Details Object
     :Type: Integer
     :Constraints: Required
     :Description: The number of seconds of idle time since the last action was
-                  peformed.
+                  performed.
 
 ``text``
     :Type: `Localized String Object`_
