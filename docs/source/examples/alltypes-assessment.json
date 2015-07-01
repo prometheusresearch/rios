@@ -1,0 +1,89 @@
+{
+  "instrument": {
+    "id": "urn:examples:all-types",
+    "version": "1.0"
+  },
+
+  "values": {
+    "float_field": {
+      "value": 12.3
+    },
+
+    "integer_field": {
+      "value": 42
+    },
+
+    "text_field": {
+      "value": "hello world"
+    },
+
+    "enumeration_field": {
+      "value": "blue"
+    },
+
+    "enumerationset_field": {
+      "value": ["pizza", "taco"]
+    },
+
+    "date_field": {
+      "value": "2015-07-04"
+    },
+
+    "time_field": {
+      "value": "12:34:56"
+    },
+
+    "datetime_field": {
+      "value": "2010-04-01T03:55:24"
+    },
+
+    "recordlist_field": {
+      "value": [
+        {
+          "sub_field_1": {
+            "value": "foo"
+          },
+
+          "sub_field_2": {
+            "value": 12
+          }
+        },
+
+        {
+          "sub_field_1": {
+            "value": "bar"
+          },
+
+          "sub_field_2": {
+            "value": 9001
+          }
+        }
+      ]
+    },
+
+    "matrix_field": {
+      "value": {
+        "row_1": {
+          "column_1": {
+            "value": "happy"
+          },
+
+          "column_2": {
+            "value": 1337
+          }
+        },
+
+        "row_2": {
+          "column_1": {
+            "value": "sad"
+          },
+
+          "column_2": {
+            "value": 12345
+          }
+        }
+      }
+    }
+  }
+}
+

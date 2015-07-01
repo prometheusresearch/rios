@@ -31,6 +31,11 @@ Specifications
 Examples
 ========
 
+.. toctree::
+   :maxdepth: 1
+
+   examples/simple
+   examples/alltypes
 
 
 License

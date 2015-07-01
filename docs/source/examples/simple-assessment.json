@@ -1,0 +1,24 @@
+{
+  "instrument": {
+    "id": "urn:examples:simple",
+    "version": "1.0"
+  },
+
+  "values": {
+    "name": {
+      "value": "John Smith"
+    },
+
+    "birthdate": {
+      "value": "1983-10-29"
+    }
+  },
+
+  "meta": {
+    "calculations": {
+      "uppercase_name": "JOHN SMITH",
+      "birth_year": 1983
+    }
+  }
+}
+

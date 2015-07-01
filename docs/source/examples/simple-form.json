@@ -1,0 +1,51 @@
+{
+  "instrument": {
+    "id": "urn:examples:simple",
+    "version": "1.0"
+  },
+
+  "defaultLocalization": "en",
+  "title": {
+    "en": "A Web Form for the Simple Example"
+  },
+
+  "pages": [
+    {
+      "id": "page1",
+      "elements": [
+        {
+          "type": "text",
+          "options": {
+            "text": {
+              "en": "Please answer this short questionnaire."
+            }
+          }
+        },
+
+        {
+          "type": "question",
+          "options": {
+            "fieldId": "name",
+            "text": {
+              "en": "What is your full name?"
+            }
+          }
+        },
+
+        {
+          "type": "question",
+          "options": {
+            "fieldId": "birthdate",
+            "text": {
+              "en": "What date were you born?"
+            },
+            "help": {
+              "en": "Please enter the date in YYYY-MM-DD format."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+

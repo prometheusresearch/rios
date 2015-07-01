@@ -1,0 +1,27 @@
+{
+  "instrument": {
+    "id": "urn:examples:simple",
+    "version": "1.0"
+  },
+
+  "calculations": [
+    {
+      "id": "uppercase_name",
+      "type": "text",
+      "method": "python",
+      "options": {
+        "expression": "assessment['name'].upper()"
+      }
+    },
+
+    {
+      "id": "birth_year",
+      "type": "integer",
+      "method": "htsql",
+      "options": {
+        "expression": "year($birthdate)"
+      }
+    }
+  ]
+}
+

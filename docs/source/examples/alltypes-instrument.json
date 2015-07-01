@@ -1,0 +1,110 @@
+{
+  "id": "urn:examples:all-types",
+  "version": "1.0",
+
+  "title": "A Simple Example",
+
+  "record": [
+    {
+      "id": "float_field",
+      "type": "float"
+    },
+
+    {
+      "id": "integer_field",
+      "type": "integer"
+    },
+
+    {
+      "id": "text_field",
+      "type": "text"
+    },
+
+    {
+      "id": "enumeration_field",
+      "type": {
+        "base": "enumeration",
+        "enumerations": {
+          "red": {},
+          "blue": {},
+          "green": {}
+        }
+      }
+    },
+
+    {
+      "id": "enumerationset_field",
+      "type": {
+        "base": "enumerationSet",
+        "enumerations": {
+          "pizza": {},
+          "taco": {},
+          "sushi": {},
+          "burger": {},
+          "salad": {}
+        }
+      }
+    },
+
+    {
+      "id": "date_field",
+      "type": "date"
+    },
+
+    {
+      "id": "time_field",
+      "type": "time"
+    },
+
+    {
+      "id": "datetime_field",
+      "type": "dateTime"
+    },
+
+    {
+      "id": "recordlist_field",
+      "type": {
+        "base": "recordList",
+        "record": [
+          {
+            "id": "sub_field_1",
+            "type": "text"
+          },
+
+          {
+            "id": "sub_field_2",
+            "type": "integer"
+          }
+        ]
+      }
+    },
+
+    {
+      "id": "matrix_field",
+      "type": {
+        "base": "matrix",
+        "rows": [
+          {
+            "id": "row_1"
+          },
+
+          {
+            "id": "row_2"
+          }
+        ],
+        "columns": [
+          {
+            "id": "column_1",
+            "type": "text"
+          },
+
+          {
+            "id": "column_2",
+            "type": "integer"
+          }
+        ]
+      }
+    }
+  ]
+}
+

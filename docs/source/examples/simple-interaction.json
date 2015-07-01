@@ -1,0 +1,40 @@
+{
+  "instrument": {
+    "id": "urn:examples:simple",
+    "version": "1.0"
+  },
+
+  "defaultLocalization": "en",
+
+  "steps": [
+    {
+      "type": "text",
+      "options": {
+        "text": {
+          "en": "Please answer this short questionnaire."
+        }
+      }
+    },
+
+    {
+      "type": "question",
+      "options": {
+        "fieldId": "name",
+        "text": {
+          "en": "What is your full name?"
+        }
+      }
+    },
+
+    {
+      "type": "question",
+      "options": {
+        "fieldId": "birthdate",
+        "text": {
+          "en": "What date were you born?"
+        }
+      }
+    }
+  ]
+}
+
