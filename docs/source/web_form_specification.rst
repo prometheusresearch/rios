@@ -58,12 +58,6 @@ The Root Object of a Web Form Configuration consists of several properties:
                   Pages are placed in this property is the same order that they
                   will be presented on the front end.
 
-``unprompted``
-    :Type: `Unprompted Collection Object`_
-    :Description: This property contains information about how to handle all
-                  Fields from the Instrument that are not included in any
-                  Questions.
-
 ``parameters``
     :Type: `Parameter Collection Object`_
     :Description: This property specifies the identifiers of variables that
@@ -303,7 +297,6 @@ particular condition is met. This object consists of the following properties:
                      disable            question, header, text, divider Yes                 Shows the element to the user, but does not allow them to interact with or respond to it.
                      hideEnumeration    question                        No                  Hides the specified enumerations (in ``enumeration`` and ``enumerationSet`` Questions) from the user.
                      fail               question                        No                  Causes the response to the Question to be considered "invalid", meaning the user must change it before they can successfully complete the Form.
-                     calculate          question                        No                  Causes the response to the Question to be automatically calculated using an expression.
                      ================== =============================== =================== ===========
 
 ``targets``
@@ -326,9 +319,8 @@ particular condition is met. This object consists of the following properties:
     :PossibleValues: ============== =================== ===========
                      Option         Applicable Actions  Description
                      ============== =================== ===========
-                     text           fail                A `Localized String Object`_ that contains the error message to show on the target question.
-                     enumerations   hideEnumeration     A list of enumeration IDs to hide on the target question.
-                     calculation    calculate           The PEXL expression to use to calculate the value for the target Question.
+                     text           fail                A `Localized String Object`_ that contains the error message to show on the target question. Required.
+                     enumerations   hideEnumeration     A list of enumeration IDs to hide on the target question. Required.
                      ============== =================== ===========
 
 
@@ -418,45 +410,6 @@ fully-qualified (e.g., ``http://example.com/foo.mp3``) or domain-relative
 (e.g, ``../../foo.mp3``) can be troublesome to configure in environments where
 subpaths or mount points may not be predictable or stable.
 
-
-Unprompted Collection Object
-----------------------------
-An Unprompted Collection Object consists of one to many properties where the
-property name serves as a reference to the ID of a Field defined in the
-associated :doc:`Instrument Definition </instrument_specification>`, and the
-value of that property is an `Unprompted Object`_ which contains the the
-information about how to handle that Field.
-
-
-Unprompted Object
------------------
-An Unprompted Object defines how to handle a Field that is not presented to
-the end user in any Questions within the Form. It consists of the
-following properties:
-
-``action``
-    :Type: Enumerated String
-    :Constraints: Required
-    :Description: This property indicates which action should be taken for this
-                  Field.
-    :PossibleValues: ================== ===========
-                     Action             Description
-                     ================== ===========
-                     calculate          Causes the response to the Question to be automatically calculated using an expression.
-                     ================== ===========
-
-``options``
-    :Type: Object
-    :Constraints: The contents of the Object depend on the ``action``
-                  specified.
-    :Descriptions: This property allows the Form author to provide
-                   configuration parameters to the ``action`` being executed.
-                   This property is optional.
-    :PossibleValues: ============== =================== ===========
-                     Option         Applicable Actions  Description
-                     ============== =================== ===========
-                     calculation    calculate           The PEXL expression to use to calculate the value for the target Field.
-                     ============== =================== ===========
 
 Parameter Collection Object
 ---------------------------
