@@ -381,9 +381,11 @@ that component. This object consists of a couple properties:
                      ============== =================================== =========== ===========
                      width          inputText, inputNumber, textArea    medium      Specifies the width of the widget. Allows ``small``, ``medium``, or ``large``.
                      height         textArea                            medium      Specifies the height of the widget. Allows ``small``, ``medium``, or ``large``.
-                     addLabel       recordList                          Add         A `Localized String Object` that specifies the text to use on the button that adds a new record to the list.
-                     removeLabel    recordList                          Remove      A `Localized String Object` that specifies the text to use on the button that removes a record from the list.
+                     addLabel       recordList                          Add         A `Localized String Object`_ that specifies the text to use on the button that adds a new record to the list.
+                     removeLabel    recordList                          Remove      A `Localized String Object`_ that specifies the text to use on the button that removes a record from the list.
                      hotkeys        radioGroup, checkGroup                          A mapping of Enumeration IDs to the numeric digits that will act as hotkeys to select the enumeration via keyboard entry. This option is ignored if there are more than 10 enumerations. If an enumeration is not listed in the mapping, it will automatically be assigned one.
+                     autoHotkeys    radioGroup, checkGroup              false       A boolean that indicates that hotkeys must be enabled, even if the ``hotkeys`` option is not specified.
+                     orientation    radioGroup, checkGroup              vertical    Specifies the direction that the enumerations should be listed. Allows ``vertical`` or ``horizontal``.
                      ============== =================================== =========== ===========
 
 
