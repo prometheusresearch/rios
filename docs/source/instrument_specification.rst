@@ -196,8 +196,8 @@ the author to place additional restrictions or constraints on the data.
     :Description: This property indicates the base Type that this Type Object
                   will inherit its basic properties from. All Types defined in
                   an Instrument Definition must inherit from either one of the
-                  **simple** `Base Types`_, or one of the Types defined in the
-                  `Type Collection Object`_.
+                  `Base Types`_, or one of the Types defined in the `Type
+                  Collection Object`_.
 
 ``range``
     :Type: `Bound Constraint Object`_
@@ -249,14 +249,16 @@ the author to place additional restrictions or constraints on the data.
     :Constraints: Required for ``recordList`` Types
     :SupportedBaseTypes: recordList
     :Description: This property specifies the Record that respondents must
-                  respond to as a repeating set.
+                  respond to as a repeating set. The Fields listed in this
+                  property must be based on a **simple** type.
 
 ``columns``
     :Type: Array of `Column Object`_
     :Constraints: Required for ``matrix`` Types
     :SupportedBaseTypes: matrix
     :Description: This property specifies the columns that make up a matrix
-                  data point.
+                  data point. The Fields listed in this property must be based
+                  on a **simple** type.
 
 ``rows``
     :Type: Array of `Row Object`_
@@ -294,7 +296,8 @@ data points that are to be collected for reach row.
                   either indicating the identifier of one of the simple `Base
                   Types`_, the identifier of one of the Types defined in the
                   `Type Collection Object`_, or it can be a `Type Object`_ that
-                  defines a simple Type directly within this Field.
+                  defines a simple Type directly within this Field. Ultimately,
+                  the type must be based on a **simple** type.
 
 ``required``
     :Type: Boolean
@@ -367,9 +370,9 @@ dateTime        simple  A string value representing the time on a specific date.
                         be formatted as an `ISO 8601`_ extended format date and time
                         combination (YYYY-MM-DDTHH:MM:SS).
 recordList      complex An array of multiple-response collections, where each element
-                        in the array is the same set of Fields being responded to
+                        in the array is the same set of simple Fields being responded to
                         multiple times.
-matrix          complex A multi-value grid that presents the same Fields (columns) for
+matrix          complex A multi-value grid that presents the same simple Fields (columns) for
                         every record (row).
 =============== ======= ===========
 
