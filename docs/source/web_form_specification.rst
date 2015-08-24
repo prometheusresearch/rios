@@ -153,9 +153,7 @@ properties:
     :Type: Array of `Identifier`_
     :Description: This property allows the Form author to tag the element as
                   belonging to a particular "group" so that they may be later
-                  referenced in an `Event Object`_ target as collection. The
-                  tags used in this property must have been defined in the
-                  ``tags`` property on the `Root Object`_.
+                  referenced in an `Event Object`_ target as collection.
 
 
 Question Object
