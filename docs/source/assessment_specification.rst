@@ -7,7 +7,7 @@ Assessment Document Specification
 
 Overview
 ========
-A PRISMH Assessment Document is a standard means to represent a set of values
+A RIOS Assessment Document is a standard means to represent a set of values
 that fulfill the requirements described in a corresponding :doc:`Instrument
 Definition </instrument_specification>`.
 

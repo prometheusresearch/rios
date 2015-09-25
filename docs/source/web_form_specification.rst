@@ -7,7 +7,7 @@ Web Form Configuration Specification
 
 Overview
 ========
-A PRISMH Web Form Configuration is a standard means to augment an
+A RIOS Web Form Configuration is a standard means to augment an
 :doc:`Instrument Definition </instrument_specification>` with additional
 configuration and meta-data that allows the Instrument to be administered via a
 web-based application.

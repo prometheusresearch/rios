@@ -7,7 +7,7 @@ Instrument Definition Specification
 
 Overview
 ========
-A PRISMH Instrument Definition is a standard means to represent a set of data
+A RIOS Instrument Definition is a standard means to represent a set of data
 that must are to be collected about a subject. It is intended to define
 **what** data is to be collected, not necessarily **how** that data is
 collected.

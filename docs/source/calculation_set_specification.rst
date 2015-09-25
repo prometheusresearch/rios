@@ -7,7 +7,7 @@ Calculation Set Definition Specification
 
 Overview
 ========
-A PRISMH Calculation Set Definition is a standard means to represent a set of
+A RIOS Calculation Set Definition is a standard means to represent a set of
 calculations that can be applied to the data collected in an :doc:`Assessment
 Document </assessment_specification>` for a given :doc:`Instrument Definition
 </instrument_specification>`.

@@ -7,7 +7,7 @@ SMS Interaction Configuration Specification
 
 Overview
 ========
-A PRISMH SMS Interaction Configuration is a standard means to augment an
+A RIOS SMS Interaction Configuration is a standard means to augment an
 :doc:`Instrument Definition </instrument_specification>` with additional
 configuration and meta-data that allows the Instrument to be administered via
 an SMS text message-based application.

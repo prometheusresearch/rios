@@ -1,9 +1,9 @@
-****************************************************************
-PRISMH - Portable Research Instrument Standard for Mental Health
-****************************************************************
+****************************************
+RIOS - Research Instrument Open Standard
+****************************************
 
 Welcome! This site is the home of the documentation and specifications around
-**PRISMH**, the Portable Research Instrument Standard for Mental Health.
+**RIOS**, the Research Instrument Open Standard.
 
 
 Introduction

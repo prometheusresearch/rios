@@ -8,7 +8,7 @@ Overview
 Introduction
 ============
 
-The PRISMH specification describe a collection of configuration files that are
+The RIOS specification describe a collection of configuration files that are
 used to define the process of data collection in an open and transportable way.
 
 
@@ -18,7 +18,7 @@ Major Components
 Instrument
 ----------
 :doc:`Instrument Definition </instrument_specification>` are the base of the
-PRISMH specification. They contain the definition of **what** data is to be
+RIOS specification. They contain the definition of **what** data is to be
 collected. At its heart, it is a list of field definitions that specify the
 name, data type, and type constraints.  There is no information or instruments
 on **how** the data is to be retrieved or collected -- only **what** data needs

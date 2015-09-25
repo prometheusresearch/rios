@@ -1,10 +1,16 @@
-*********************
-PRISMH Change History
-*********************
+*******************
+RIOS Change History
+*******************
 
 
-0.1.0 (2015-xx-xx)
+0.2.0 (2015-xx-xx)
 ==================
 
-* Initial publication for review.
+* Changed name of standard to RIOS - Research Instrument Open Standard
+
+
+0.1.0 (2015-08-24)
+==================
+
+* Initial publication of PRIMSH for review.
 
