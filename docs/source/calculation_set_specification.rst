@@ -98,10 +98,17 @@ properties:
 
 ``type``
     :Type: Enumerated String
-    :Constraints: Required; Must be an :doc:`Instrument Definition
-                  </instrument_specification>` Simple Type
+    :Constraints: Required; Must be one of the :doc:`Instrument Definition
+                  </instrument_specification>` data types listed below
     :Description: This property identifies the type of data that will be
                   returned as a response to this Field. 
+    :PossibleValues: * ``float``
+                     * ``integer``
+                     * ``text``
+                     * ``boolean``
+                     * ``date``
+                     * ``time``
+                     * ``dateTime``
 
 ``method``
     :Type: Enumerated String
