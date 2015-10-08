@@ -153,7 +153,10 @@ properties:
     :Type: Array of `Identifier`_
     :Description: This property allows the Form author to tag the element as
                   belonging to a particular "group" so that they may be later
-                  referenced in an `Event Object`_ target as collection.
+                  referenced in an `Event Object`_ target as collection. These
+                  tags cannot be the same as the IDs of any Fields in the
+                  associated :doc:`Instrument Definition
+                  </instrument_specification>`, nor the ``id`` of any Pages.
 
 
 Question Object
