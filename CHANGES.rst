@@ -12,6 +12,7 @@ RIOS Change History
   the set of possible enumerations.
 * Clarified that Form Element Tags cannot be the same as Page IDs or Instrument
   Field IDs.
+* Clarified <<Parameter>> markup behavior with respect to null values.
 
 
 0.1.0 (2015-08-24)

@@ -516,9 +516,9 @@ supports two pieces of functionality:
     How old is <<Parameter subject_name this subject>>?
 
   The first token after the ``Parameter`` keyword is the name of the parameter
-  to insert into the text. If the parameter does not exist, then the token(s)
-  after the parameter name are inserted into the text. If nothing is listed
-  after the parameter name, then nothing is inserted.
+  to insert into the text. If the parameter does not exist or is null, then the
+  token(s) after the parameter name are inserted into the text. If nothing is
+  listed after the parameter name, then nothing is inserted.
 
   If ``subject_name`` was set to "Jason" then the two examples would both look
   like::
