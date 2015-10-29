@@ -27,6 +27,7 @@ Specifications
    assessment_specification
    web_form_specification
    sms_interaction_specification
+   rexl_specification
 
 
 Examples

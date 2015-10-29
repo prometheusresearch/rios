@@ -279,11 +279,11 @@ An Event Object represents an action that the Form will take when a
 particular condition is met. This object consists of the following properties:
 
 ``trigger``
-    :Type: String
+    :Type: String   :doc:`Instrument Definition </instrument_specification>`
     :Constraints: Required
-    :Description: This property specifies a PEXL expression that, when
-                  it evaluates to a truthy value, will then cause the ``action``
-                  specified in this `Event Object`_ to execute.
+    :Description: This property specifies a :doc:`REXL expression </rexl_specification>`
+                  that, when it evaluates to a truthy value, will then cause
+                  the ``action`` specified in this `Event Object`_ to execute.
 
 ``action``
     :Type: Enumerated String
