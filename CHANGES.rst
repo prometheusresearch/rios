@@ -13,6 +13,7 @@ RIOS Change History
 * Clarified that Form Element Tags cannot be the same as Page IDs or Instrument
   Field IDs.
 * Clarified <<Parameter>> markup behavior with respect to null values.
+* Clarified type inheritance with respect to overriding constraints.
 
 
 0.1.0 (2015-08-24)

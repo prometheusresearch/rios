@@ -128,7 +128,7 @@ of several properties:
     :Type: Enumerated String
     :Description: Indicates whether or not this Field allows for an
                   additional text-based response that allows the respondent to
-                  explain why they can't or won't provide a response for this 
+                  explain why they can't or won't provide a response for this
                   Field. This property is optional, and, if not specified, is
                   assumed to be ``none``. If this Field is marked as
                   ``required``, this property cannot be any value other than
@@ -198,6 +198,11 @@ the author to place additional restrictions or constraints on the data.
                   an Instrument Definition must inherit from either one of the
                   `Base Types`_, or one of the Types defined in the `Type
                   Collection Object`_.
+
+                  If this Type Object inherits from a custom Type defined in
+                  the `Type Collection Object`_, then any constraints also
+                  defined in this Type Object will completely override
+                  constraints by the same name defined in the parent Type.
 
 ``range``
     :Type: `Bound Constraint Object`_
