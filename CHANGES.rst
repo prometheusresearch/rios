@@ -14,6 +14,8 @@ RIOS Change History
   Field IDs.
 * Clarified <<Parameter>> markup behavior with respect to null values.
 * Clarified type inheritance with respect to overriding constraints.
+* Added support for an ``identifiable`` flag on Calculations. This flag's
+  meaning is the same as it is on Instrument fields.
 
 
 0.1.0 (2015-08-24)
