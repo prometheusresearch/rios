@@ -16,6 +16,8 @@ RIOS Change History
 * Clarified type inheritance with respect to overriding constraints.
 * Added support for an ``identifiable`` flag on Calculations. This flag's
   meaning is the same as it is on Instrument fields.
+* Added support for arbitrary metadata in Instruments, Calculation Sets, Forms,
+  and Interactions via the ``meta`` property.
 
 
 0.1.0 (2015-08-24)

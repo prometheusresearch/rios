@@ -37,6 +37,12 @@ The Root Object of a Calculation Set Definition consists of a few properties:
                   </instrument_specification>` the calculations defined within
                   this definition applies to.
 
+``meta``
+    :Type: `Metadata Collection Object`_
+    :Description: This property allows arbitrary information about this
+                  Calculation Set to be stored within the definition. This
+                  property is optional.
+
 ``calculations``
     :Type: Array of `Calculation Object`_
     :Constraints: Required; Must contain at least one `Calculation Object`_
@@ -174,6 +180,33 @@ Example Identifiers:
 * page1
 * grp_a
 * ref_1_2_alpha
+
+
+Metadata Collection Object
+--------------------------
+A Metadata Collection Object consists of one to many properties that allows you
+to attach arbitrary, implementation-specific, or other such data to structures
+within an Calculation Set Definition.
+
+For consistency's and interoperability's sake, some common data elements are
+defined below, but note that the Metadata Collection Object has no required or
+predefined properties, and can therefore contain any (legal JSON) property
+names and value data types. Software that consumes Calculation Set Definitions
+*must* ignore any property whose name it does not recognize or support.
+
+=============== =========== =========================== =============================================================
+Property Name   Data Type   Example                     Description
+=============== =========== =========================== =============================================================
+author          String      John Smith                  A string that describes the entity that created this
+                                                        definition.
+copyright       String      2009, Smith Instrumentation A string that describes who owns the copyright to the
+                                                        Instrument, Calculations, or Scores implemented by this
+                                                        definition.
+homepage        String      http://www.example.com      A URL (as described by `RFC1738`_) to a web page that has
+                                                        more information about this Instrument or Calculation.
+=============== =========== =========================== =============================================================
+
+.. _`RFC1738`: http://tools.ietf.org/html/rfc1738
 
 
 Calculation Methods
