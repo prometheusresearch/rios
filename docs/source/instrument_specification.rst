@@ -509,7 +509,12 @@ copyright       String      2009, Smith Instrumentation A string that describes 
                                                         Instrument implemented by this definition.
 homepage        String      http://www.example.com      A URL (as described by `RFC1738`_) to a web page that has
                                                         more information about this Instrument.
+generator       String      SurveyBuilder/1.0           A string that indicates what application produced the
+                                                        Instrument Definition. This must should be formatted
+                                                        similarly to HTTP Product Token strings as specified in
+                                                        `RFC2616`_.
 =============== =========== =========================== =============================================================
 
 .. _`RFC1738`: http://tools.ietf.org/html/rfc1738
+.. _`RFC2616`: http://tools.ietf.org/html/rfc2616#section-3.8
 
