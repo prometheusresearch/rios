@@ -3,7 +3,7 @@ RIOS Change History
 *******************
 
 
-0.2.0 (2015-xx-xx)
+0.2.0 (2015-12-28)
 ==================
 
 * Changed name of standard to RIOS - Research Instrument Open Standard
