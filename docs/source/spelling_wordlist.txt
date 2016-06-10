@@ -3,6 +3,7 @@ Callables
 Indices
 Metadata
 Sublicensing
+Webinar
 addLabel
 bar
 baz
@@ -24,6 +25,7 @@ hotkeys
 htsql
 inputNumber
 inputText
+interoperable
 latin
 licensors
 mymodule
