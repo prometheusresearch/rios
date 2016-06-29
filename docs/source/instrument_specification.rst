@@ -218,7 +218,9 @@ the author to place additional restrictions or constraints on the data.
     :Type: `Bound Constraint Object`_
     :Constraints: The ``min`` and ``max`` properties, if specified, must be of
                   the same data type as the ``base`` Type this constraint is
-                  applied to.
+                  applied to (integers for ``integer``, numeric for ``float``,
+                  and `ISO 8601`_-formatted strings for
+                  ``date``/``time``/``dateTime``).
     :SupportedBaseTypes: integer, float, date, time, dateTime
     :Description: This property allows the definition author to set the minimum
                   and/or maximum limits (inclusive) that a valid response would
