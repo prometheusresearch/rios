@@ -213,7 +213,10 @@ user so that they may provide a response.
     :Description: This property contains the list of Enumerations that are
                   presented to the user for them to choose from. The order that
                   the Enumeration Objects are placed in this property is the
-                  same order that they will be presented on the front end.
+                  same order that they will be presented on the front end. Only
+                  the enumerations specified in this property will be displayed
+                  to the user. If this property is not specified, then all
+                  enumerations will be displayed using their IDs.
 
 ``questions``
     :Type: Array of `Question Object`_

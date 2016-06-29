@@ -14,6 +14,7 @@ RIOS Change History
   fields, their Rows, and their Columns.
 * Clarified the values that should be provided for the ``min`` and ``max`` of
   the ``range`` constraint.
+* Clarified behavior of the ``enumerations`` property in Question Objects.
 
 
 0.2.0 (2015-12-28)
