@@ -8,6 +8,10 @@ RIOS Change History
 
 * Clarified behavior of the ``length.min`` constraint with respect to
   ``required``.
+* Clarified behavior of the ``required`` property with respect to
+  ``recordList`` fields.
+* Clarified behavior of the ``required`` property with respect to ``matrix``
+  fields, their Rows, and their Columns.
 
 
 0.2.0 (2015-12-28)

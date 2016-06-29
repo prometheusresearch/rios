@@ -128,7 +128,10 @@ of several properties:
     :Type: Boolean
     :Description: Indicates whether or not a response is required for this
                   Field. This property is optional, and, if not specified,
-                  is assumed to be false.
+                  is assumed to be false. For ``recordList`` fields, this means
+                  that there is at least one non-empty response set in the
+                  list. For ``matrix`` fields, this means that at least one
+                  cell in the matrix contains a value.
 
 ``annotation``
     :Type: Enumerated String
@@ -139,7 +142,8 @@ of several properties:
                   assumed to be ``none``. If this Field is marked as
                   ``required``, this property cannot be any value other than
                   ``none``.
-    :PossibleValues: * ``required`` - An annotation must be collected for this
+    :PossibleValues: * ``required`` - If no value for the field has been
+                       collected, an annotation must be collected for this
                        Field.
                      * ``optional`` - An annotation may be collected for this
                        Field.
@@ -316,8 +320,10 @@ data points that are to be collected for reach row.
 ``required``
     :Type: Boolean
     :Description: Indicates whether or not a response is required for this
-                  Column. This property is optional, and, if not specified,
-                  is assumed to be false.
+                  Column. This means that for any Row in the matrix where at
+                  least one Column is populated with a value, this Column must
+                  also have a value. This property is optional, and, if not
+                  specified, is assumed to be false.
 
 ``identifiable``
     :Type: Boolean
@@ -355,8 +361,9 @@ field.
 ``required``
     :Type: Boolean
     :Description: Indicates whether or not a response is required for this
-                  Row. This property is optional, and, if not specified,
-                  is assumed to be false.
+                  Row. This means that at least one column in this Row contains
+                  a value. This property is optional, and, if not specified, is
+                  assumed to be false.
 
 
 Base Types
