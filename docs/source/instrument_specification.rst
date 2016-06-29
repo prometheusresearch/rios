@@ -223,19 +223,22 @@ the author to place additional restrictions or constraints on the data.
 ``length``
     :Type: `Bound Constraint Object`_
     :Constraints: The ``min`` and ``max`` properties, if specified, must be
-                  integers.
+                  integers. If both ``min`` and ``max`` are specified, ``min``
+                  must be less than or equal to ``max``.
     :SupportedBaseTypes: text, enumerationSet, recordList
     :Description: For ``text`` response types, this property allows the
                   definition author to set the minimum and/or maximum character
                   length that the response can be. For ``enumerationSet``
                   response types, this property allows the definition author to
                   specify the minimum and/or maximum number of enumerations the
-                  respondent can select. For ``recordList`` response
-                  types, this property allows the definition author to specify
-                  the minimum and/or maximum number of response sets the
-                  respondent can provide for this Field. If this Field is
-                  also marked as required, then the minimum value cannot be
-                  lower than one.
+                  respondent can select. For ``recordList`` response types,
+                  this property allows the definition author to specify the
+                  minimum and/or maximum number of response sets the respondent
+                  can provide for this Field. If this Field is also marked as
+                  required, then the minimum value cannot be lower than one.
+                  Note that setting a ``min`` is not equivalent to marking the
+                  field as required. This length constraint is only enforced on
+                  non-empty values.
 
 ``pattern``
     :Type: String

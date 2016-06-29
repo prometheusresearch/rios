@@ -3,6 +3,13 @@ RIOS Change History
 *******************
 
 
+0.3.0 (2016-xx-xx)
+==================
+
+* Clarified behavior of the ``length.min`` constraint with respect to
+  ``required``.
+
+
 0.2.0 (2015-12-28)
 ==================
 
