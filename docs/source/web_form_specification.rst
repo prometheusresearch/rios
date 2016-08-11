@@ -300,14 +300,17 @@ particular condition is met. This object consists of the following properties:
     :Description: This property indicates which action the front-end application
                   should take when the corresponding expression evaluates to a
                   truthy value.
-    :PossibleValues: ================== =============================== =================== ===========
-                     Action             Applicable Elements             Applies to Pages    Description
-                     ================== =============================== =================== ===========
-                     hide               question, header, text, divider Yes                 Completely hides the element from the user.
-                     disable            question, header, text, divider Yes                 Shows the element to the user, but does not allow them to interact with or respond to it.
-                     hideEnumeration    question                        No                  Hides the specified enumerations (in ``enumeration`` and ``enumerationSet`` Questions) from the user.
-                     fail               question                        No                  Causes the response to the Question to be considered "invalid", meaning the user must change it before they can successfully complete the Form.
-                     ================== =============================== =================== ===========
+    :PossibleValues: ================== =========================== =================== ===========
+                     Action             Applicable Elements         Applies to Pages    Description
+                     ================== =========================== =================== ===========
+                     hide               question, header, text,     Yes                 Completely hides the element from the user.
+                                        divider, audio
+                     disable            question, header, text,     Yes                 Shows the element to the user, but does not allow them to interact with or respond to it.
+                                        divider, audio
+
+                     hideEnumeration    question                    No                  Hides the specified enumerations (in ``enumeration`` and ``enumerationSet`` Questions) from the user.
+                     fail               question                    No                  Causes the response to the Question to be considered "invalid", meaning the user must change it before they can successfully complete the Form.
+                     ================== =========================== =================== ===========
 
 ``targets``
     :Type: Array of `Compound Identifier`_
