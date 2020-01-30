@@ -3,9 +3,10 @@ RIOS Change History
 *******************
 
 
-0.3.0 (2016-xx-xx)
+0.3.0 (2020-01-30)
 ==================
 
+* Changed license to Apache v2.0.
 * Clarified behavior of the ``length.min`` constraint with respect to
   ``required``.
 * Clarified behavior of the ``required`` property with respect to
